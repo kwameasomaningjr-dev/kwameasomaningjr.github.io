@@ -2,18 +2,28 @@ import { useState } from 'react';
 import './Contact.css';
 
 export default function Contact() {
-    const [form, setForm] = useState({ name: '', email: '', message: '' });
-    const [submitted, setSubmitted] = useState(false);
+    const [result, setResult] = useState("");
 
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setResult("Sending....");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 3000);
-        setForm({ name: '', email: '', message: '' });
+        const formData = new FormData(event.target);
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            setResult("Form Submitted Successfully");
+            event.target.reset();
+        } else {
+            console.log("Error", data);
+            setResult(data.message);
+        }
     };
 
     return (
@@ -83,15 +93,16 @@ export default function Contact() {
                             </div>
                         </div>
 
-                        <form className="contact-form" onSubmit={handleSubmit}>
+                        <form className="contact-form" onSubmit={onSubmit}>
+                            <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY} />
+                            <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
                             <div className="form-group">
                                 <input
                                     type="text"
                                     name="name"
                                     className="form-input"
                                     placeholder="Your Name"
-                                    value={form.name}
-                                    onChange={handleChange}
                                     required
                                 />
                             </div>
@@ -101,8 +112,6 @@ export default function Contact() {
                                     name="email"
                                     className="form-input"
                                     placeholder="Your Email"
-                                    value={form.email}
-                                    onChange={handleChange}
                                     required
                                 />
                             </div>
@@ -111,14 +120,12 @@ export default function Contact() {
                                     name="message"
                                     className="form-textarea"
                                     placeholder="Your Message"
-                                    value={form.message}
-                                    onChange={handleChange}
                                     required
                                 />
                             </div>
                             <button type="submit" className="form-submit">
-                                {submitted ? '✓ Message Sent!' : 'Send Message'}
-                                {!submitted && (
+                                {result ? result : "Send Message"}
+                                {!result && (
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                         <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
                                     </svg>
