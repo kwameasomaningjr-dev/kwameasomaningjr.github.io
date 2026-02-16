@@ -1,0 +1,51 @@
+version: "2"
+type: frontend
+tech_stack:
+  - language: JavaScript
+  - framework: React
+  - ui_library: Custom CSS
+  - other: Vite
+routes:
+  - path: /
+    file: src/App.jsx
+    auth_required: false
+    description: Single Page Application Main Route
+features:
+  - name: Navigation
+    description: Navbar links to scroll to sections
+    files:
+      - src/components/Navbar.jsx
+      - src/App.jsx
+    entry_route: /
+    user_interactions:
+      - Click on Home link
+      - Click on About link
+      - Click on Projects link
+      - Click on Skills link
+      - Click on Timeline link
+      - Click on Contact link
+    api_calls: []
+    auth_required: false
+  - name: Hero Section
+    description: Introduction and call to action
+    files:
+      - src/components/Hero.jsx
+    entry_route: /
+    user_interactions:
+      - View introduction
+    api_calls: []
+    auth_required: false
+  - name: Contact Form
+    description: Contact form for user inquiries
+    files:
+      - src/components/Contact.jsx
+    entry_route: /
+    user_interactions:
+      - Fill email input field
+      - Fill message input field
+      - Click Submit button
+    api_calls:
+      - method: POST
+        endpoint: (external)
+    auth_required: false
+known_limitations: []

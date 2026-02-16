@@ -1,0 +1,1083 @@
+[
+  {
+    "id": "TC001",
+    "title": "Sticky navbar remains visible while scrolling",
+    "description": "Verifies the top navigation remains visible (sticky) as the user scrolls through the page.",
+    "category": "Navigation",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Top navigation bar\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to \"Timeline section\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Top navigation bar\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to \"Contact section\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Top navigation bar\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Hero section loads and shows core introduction content",
+    "description": "Verifies the hero section renders the introduction and primary call-to-action on initial load.",
+    "category": "Hero Section",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Hero section\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Richard\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View My Projects\" button is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Availability\" badge is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "CTA scrolls to Projects section from the hero",
+    "description": "Verifies clicking the hero CTA scrolls the page to the Projects section.",
+    "category": "Hero Section",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View My Projects\" button is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"View My Projects\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Projects\" section is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Projects\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "CTA remains visible and clickable after short scroll",
+    "description": "Verifies the CTA button remains accessible after a small manual scroll in the hero area.",
+    "category": "Hero Section",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View My Projects\" button is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to \"Availability\" badge"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View My Projects\" button is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"View My Projects\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Projects\" section is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Keyboard activation of CTA triggers scroll to Projects",
+    "description": "Verifies the CTA can be activated via keyboard and still scrolls to the Projects section.",
+    "category": "Hero Section",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View My Projects\" button is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"View My Projects\""
+      },
+      {
+        "type": "action",
+        "description": "Press Tab"
+      },
+      {
+        "type": "action",
+        "description": "Press Enter"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Projects\" section is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Hero animated background does not block interaction with CTA",
+    "description": "Verifies the animated background is present (or the hero background area is visible) and does not prevent clicking the CTA.",
+    "category": "Hero Section",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Hero background\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View My Projects\" button is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"View My Projects\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Projects\" section is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Availability badge is visible and readable in the hero",
+    "description": "Verifies the availability badge renders and displays readable availability text.",
+    "category": "Hero Section",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Availability\" badge is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Available\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View My Projects\" button is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Negative: Detect CTA unresponsive behavior by verifying no Projects scroll",
+    "description": "Attempts to validate the unresponsive-CTA scenario by confirming the Projects section does not come into view after clicking.",
+    "category": "Hero Section",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View My Projects\" button is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Hero section\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"View My Projects\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Hero section\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Projects\" section is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "About section displays bio and photo area",
+    "description": "Verifies the About section is reachable from the home page and shows the personal bio and photo placeholder area.",
+    "category": "About Section",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"About\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"About\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"personal bio\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"photo\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Tech stack badges are visible in About section",
+    "description": "Verifies the horizontally displayed tech stack badges are visible in the About section.",
+    "category": "About Section",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"About\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Tech Stack\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"tech stack badges\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"tech stack badge image\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Tech stack badge row supports horizontal scrolling within About section",
+    "description": "Verifies the tech badge display can be horizontally scrolled to reveal additional badges.",
+    "category": "About Section",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"About\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"tech stack badges\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"tech stack badges\" area"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"additional tech stack badges\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "About section content remains visible after scrolling away and back",
+    "description": "Verifies About section content renders consistently when the user scrolls away and returns to it.",
+    "category": "About Section",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"About\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"personal bio\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the top of the page"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"About\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"photo\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "About section does not show broken image icons for the photo placeholder",
+    "description": "Verifies the About photo area renders as a placeholder/area rather than a broken image state.",
+    "category": "About Section",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"About\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"photo\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"About\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"photo placeholder\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Open a project via 'View Project' from the Projects section",
+    "description": "Verifies a visitor can find the Projects section and use a project's 'View Project' link to open the project destination.",
+    "category": "Projects Section",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Projects\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Projects\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"a project card\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"View Project\" on the first visible project card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View Project\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Projects section renders a card grid with tags and 'View Project' links",
+    "description": "Verifies project cards are visible as a grid/list and each card presents tags and a 'View Project' call-to-action.",
+    "category": "Projects Section",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Projects\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Projects\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"multiple project cards\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"project tags on a project card\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View Project\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Projects section remains reachable and usable after scrolling past and back to it",
+    "description": "Verifies a visitor can scroll away and return to Projects and still interact with a 'View Project' link.",
+    "category": "Projects Section",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Projects\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Projects\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the bottom of the page"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Projects\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View Project\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"View Project\" on the first visible project card"
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "View Skills section with five category cards",
+    "description": "Verifies the Skills section is reachable on the home page and shows five skill category cards.",
+    "category": "Skills Section",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Skills\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Skills\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Data Analysis\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Machine Learning\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Visualization\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Programming\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Tools & Platforms\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Read skill list under Data Analysis category",
+    "description": "Verifies at least one concrete skill item is visible under the Data Analysis card.",
+    "category": "Skills Section",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Skills\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Data Analysis\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"skills list under Data Analysis\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"at least one skill item under Data Analysis\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Read skill list under Machine Learning category",
+    "description": "Verifies at least one concrete skill item is visible under the Machine Learning card.",
+    "category": "Skills Section",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Skills\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Machine Learning\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"skills list under Machine Learning\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"at least one skill item under Machine Learning\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC020",
+    "title": "Read skill list under Visualization category",
+    "description": "Verifies at least one concrete skill item is visible under the Visualization card.",
+    "category": "Skills Section",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Skills\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Visualization\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"skills list under Visualization\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"at least one skill item under Visualization\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC021",
+    "title": "Read skill list under Programming category",
+    "description": "Verifies at least one concrete skill item is visible under the Programming card.",
+    "category": "Skills Section",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Skills\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Programming\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"skills list under Programming\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"at least one skill item under Programming\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC022",
+    "title": "Read skill list under Tools & Platforms category",
+    "description": "Verifies at least one concrete skill item is visible under the Tools & Platforms card.",
+    "category": "Skills Section",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Skills\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Tools & Platforms\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"skills list under Tools & Platforms\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"at least one skill item under Tools & Platforms\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC023",
+    "title": "Skills section remains readable after additional scrolling",
+    "description": "Verifies the Skills cards and their contents remain visible and readable after scrolling past and back within the section.",
+    "category": "Skills Section",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"Skills\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Data Analysis\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll further down the page until the Skills section is no longer centered"
+      },
+      {
+        "type": "action",
+        "description": "Scroll back to the \"Skills\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Tools & Platforms\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC024",
+    "title": "View Experience section timeline structure on the home page",
+    "description": "Verifies the Experience section is reachable and shows a vertical timeline with a connecting line and dot markers.",
+    "category": "Experience / Timeline",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Experience section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Experience\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"vertical timeline\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"timeline connecting line\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"timeline dot markers\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC025",
+    "title": "Read details for a single timeline entry",
+    "description": "Verifies a timeline entry shows readable details such as role/degree, organization, and dates.",
+    "category": "Experience / Timeline",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Experience section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"a timeline entry\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"timeline entry title\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"timeline entry organization or institution\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"timeline entry date range\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC026",
+    "title": "Verify multiple timeline entries are visible for scanning chronology",
+    "description": "Verifies the Experience timeline contains more than one milestone entry for chronological scanning.",
+    "category": "Experience / Timeline",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Experience section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"first timeline entry\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"second timeline entry\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"timeline connecting line\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"timeline dot markers\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC027",
+    "title": "Verify timeline remains visible and readable after additional scrolling within the section",
+    "description": "Verifies the timeline content remains present and readable when the user scrolls further through the Experience section.",
+    "category": "Experience / Timeline",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Experience section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"vertical timeline\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll down within the Experience section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"a later timeline entry\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"timeline dot markers\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC028",
+    "title": "Successful contact form submission shows success state and clears fields",
+    "description": "Verifies that a valid contact form submission shows the temporary '✓ Message Sent!' state and clears all form inputs afterward.",
+    "category": "Contact Section (Info Panel & Contact Form)",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Contact section"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Richard Test\" into the Name input field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"richard.test@example.com\" into the Email input field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Hello, I’m reaching out about your portfolio.\" into the Message input field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Submit button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"✓ Message Sent!\" is visible on the Submit button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Name input field is empty"
+      }
+    ]
+  },
+  {
+    "id": "TC029",
+    "title": "Successful submission clears email and message fields",
+    "description": "Verifies that after a successful submission the Email and Message fields are cleared (in addition to success feedback).",
+    "category": "Contact Section (Info Panel & Contact Form)",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Contact section"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Alicia Tester\" into the Name input field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"alicia.tester@example.com\" into the Email input field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Could we discuss a collaboration opportunity?\" into the Message input field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Submit button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"✓ Message Sent!\" is visible on the Submit button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the Message input field is empty"
+      }
+    ]
+  },
+  {
+    "id": "TC030",
+    "title": "Invalid email shows inline validation error and prevents submission",
+    "description": "Verifies that an invalid email triggers a visible inline validation error and does not show the success state.",
+    "category": "Contact Section (Info Panel & Contact Form)",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Contact section"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Invalid Email User\" into the Name input field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"not-an-email\" into the Email input field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Testing invalid email validation.\" into the Message input field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Submit button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"email\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"✓ Message Sent!\" is not visible"
+      }
+    ]
+  },
+  {
+    "id": "TC031",
+    "title": "Empty required fields show validation and block submission",
+    "description": "Verifies client-side validation prevents submission when required fields are missing.",
+    "category": "Contact Section (Info Panel & Contact Form)",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Contact section"
+      },
+      {
+        "type": "action",
+        "description": "Click the Submit button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Name\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Email\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Message\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"✓ Message Sent!\" is not visible"
+      }
+    ]
+  },
+  {
+    "id": "TC032",
+    "title": "Contact info panel social links are visible",
+    "description": "Verifies that the Contact section info panel renders and shows social link entries users can click.",
+    "category": "Contact Section (Info Panel & Contact Form)",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Contact section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Contact\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Social links\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"LinkedIn\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"GitHub\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC033",
+    "title": "Typing into contact form fields updates visible values",
+    "description": "Verifies that the Name, Email, and Message fields accept user input and display it back correctly before submission.",
+    "category": "Contact Section (Info Panel & Contact Form)",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Contact section"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Form Entry Check\" into the Name input field"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Form Entry Check\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Type \"form.entry.check@example.com\" into the Email input field"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"form.entry.check@example.com\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Type \"This message should appear in the message box.\" into the Message input field"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"This message should appear in the message box.\" is visible"
+      }
+    ]
+  }
+]
