@@ -6,9 +6,6 @@ export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [lastSubmitTime, setLastSubmitTime] = useState(0);
 
-    // Debug: Log the API key being used (will be visible in browser console)
-    console.log('Web3Forms API Key:', import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
-
     const onSubmit = async (event) => {
         event.preventDefault();
 
