@@ -2,19 +2,19 @@ import './Timeline.css';
 
 const ENTRIES = [
     {
-        date: '2025 — Present',
+        date: '2023 — Present',
         title: 'Bsc. Data Science and Analytics',
         subtitle: 'University of Ghana',
         desc: 'Pursuing a degree in Data Science with coursework in statistics, machine learning, data engineering, and applied mathematics. Dean\'s list honoree.',
     },
     {
-        date: '2026 — Present',
+        date: '2025 — Present',
         title: 'Data Science Intern',
         subtitle: 'Office Data Ghana',
         desc: 'Building interactive dashboards with Power BI, performing data cleaning and statistical analysis on business datasets, automating reporting workflows with Python scripts.',
     },
     {
-        date: '2026',
+        date: '2025',
         title: 'Machine Learning Certificate',
         subtitle: 'Online Certification',
         desc: 'Completed an intensive machine learning specialization covering supervised/unsupervised learning, neural networks, and model deployment strategies.',
