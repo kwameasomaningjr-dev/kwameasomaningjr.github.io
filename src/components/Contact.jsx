@@ -3,6 +3,7 @@ import './Contact.css';
 
 export default function Contact() {
     const [result, setResult] = useState("");
+<<<<<<< HEAD
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -23,6 +24,51 @@ export default function Contact() {
         } else {
             console.log("Error", data);
             setResult(data.message);
+=======
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [lastSubmitTime, setLastSubmitTime] = useState(0);
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+
+        // Rate limiting: 60 second cooldown between submissions
+        const now = Date.now();
+        const cooldownPeriod = 60000; // 60 seconds
+        const timeSinceLastSubmit = now - lastSubmitTime;
+
+        if (timeSinceLastSubmit < cooldownPeriod) {
+            const remainingTime = Math.ceil((cooldownPeriod - timeSinceLastSubmit) / 1000);
+            setResult(`Please wait ${remainingTime}s before submitting again`);
+            return;
+        }
+
+        setIsSubmitting(true);
+        setResult("Sending....");
+
+        const formData = new FormData(event.target);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setResult("Form Submitted Successfully");
+                setLastSubmitTime(now);
+                event.target.reset();
+            } else {
+                console.log("Error", data);
+                setResult(data.message);
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            setResult("Failed to send message. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+>>>>>>> 7101bed73731a0fd5ec9e564f6e71f31f7b6cf60
         }
     };
 
@@ -70,17 +116,6 @@ export default function Contact() {
                                     </svg>
                                 </a>
                                 <a
-                                    href="https://twitter.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="social-link"
-                                    aria-label="Twitter/X"
-                                >
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                    </svg>
-                                </a>
-                                <a
                                     href="mailto:kwameasomaningjr@gmail.com"
                                     className="social-link"
                                     aria-label="Email"
@@ -123,7 +158,11 @@ export default function Contact() {
                                     required
                                 />
                             </div>
+<<<<<<< HEAD
                             <button type="submit" className="form-submit">
+=======
+                            <button type="submit" className="form-submit" disabled={isSubmitting}>
+>>>>>>> 7101bed73731a0fd5ec9e564f6e71f31f7b6cf60
                                 {result ? result : "Send Message"}
                                 {!result && (
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

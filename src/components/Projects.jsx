@@ -15,7 +15,7 @@ const PROJECTS = [
         tags: ['Power BI', 'DAX', 'SQL', 'Excel'],
         gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
         icon: '📊',
-        link: '#',
+        link: null,
     },
     {
         title: 'Sentiment Analysis — Twitter/X',
@@ -23,7 +23,7 @@ const PROJECTS = [
         tags: ['Python', 'NLP', 'TensorFlow', 'NLTK'],
         gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
         icon: '💬',
-        link: '#',
+        link: null,
     },
 ];
 
@@ -49,14 +49,16 @@ export default function Projects() {
                                 >
                                     {project.icon}
                                 </div>
-                                <div className="project-overlay">
-                                    <a href={project.link} className="project-overlay-btn" target="_blank" rel="noopener noreferrer">
-                                        View Project
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M7 17L17 7M7 7h10v10" />
-                                        </svg>
-                                    </a>
-                                </div>
+                                {project.link && (
+                                    <div className="project-overlay">
+                                        <a href={project.link} className="project-overlay-btn" target="_blank" rel="noopener noreferrer">
+                                            View Project
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="M7 17L17 7M7 7h10v10" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                )}
                             </div>
                             <div className="project-info">
                                 <h3 className="project-title">{project.title}</h3>
