@@ -49,7 +49,7 @@ export default function Contact() {
                                     </svg>
                                 </a>
                                 <a
-                                    href="https://linkedin.com/"
+                                    href="https://www.linkedin.com/in/richard-kwame-asomaning-jr/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="social-link"

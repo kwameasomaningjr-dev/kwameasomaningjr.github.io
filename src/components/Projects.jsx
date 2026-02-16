@@ -25,30 +25,6 @@ const PROJECTS = [
         icon: '💬',
         link: '#',
     },
-    {
-        title: 'Time Series Forecasting',
-        desc: 'Implemented ARIMA and Prophet models to forecast monthly sales data with confidence intervals and trend decomposition.',
-        tags: ['Python', 'Prophet', 'Statsmodels', 'Matplotlib'],
-        gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-        icon: '📈',
-        link: '#',
-    },
-    {
-        title: 'COVID-19 Data Explorer',
-        desc: 'Built an interactive data exploration tool visualizing pandemic trends across countries with dynamic charts and filtering capabilities.',
-        tags: ['Python', 'Plotly', 'Dash', 'Pandas'],
-        gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-        icon: '🌍',
-        link: '#',
-    },
-    {
-        title: 'Student Performance Analysis',
-        desc: 'Analyzed factors affecting student academic performance using exploratory data analysis, correlation studies, and regression modeling.',
-        tags: ['R', 'ggplot2', 'dplyr', 'Tableau'],
-        gradient: 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)',
-        icon: '🎓',
-        link: '#',
-    },
 ];
 
 export default function Projects() {
